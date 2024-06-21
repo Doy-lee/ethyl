@@ -99,8 +99,8 @@ target_link_libraries(
     secp256k1
     nlohmann_json::nlohmann_json
     oxenc::oxenc
-  PRIVATE
     cncrypto
+  PRIVATE
     gmp
     gmpxx
 )
@@ -114,6 +114,7 @@ verbose_message("Successfully added all dependencies and linked against them.")
 target_include_directories(
     ${PROJECT_NAME}
     PUBLIC
+    src
     $<INSTALL_INTERFACE:include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
